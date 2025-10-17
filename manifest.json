@@ -1,0 +1,10 @@
+{
+  "name": "LLS Language Learning Subtitles",
+  "description": "An extension that adds quick word translation functionality to video subtitles, and a word bank to store new words found in videos.",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "lss_logo.png"
+  }
+}
