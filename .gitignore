@@ -1,0 +1,16 @@
+# IDEs
+idea/
+vscode/
+
+# Build
+dist/ 
+build/ 
+out/
+
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
