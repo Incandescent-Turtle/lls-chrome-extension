@@ -1,11 +1,11 @@
 # LLS — Language Learning Subtitles
-
 **LLS** is a free, open-source Chrome extension for learning languages through subtitles.  
 Highlight words and phrases while watching videos (like YouTube or Netflix), see translations instantly, and build your own personalized word bank to look back on later.
 
 Planning Document is here: https://docs.google.com/document/d/1UO2vKFcx9XFlMEN_ec5uRU0OsGKuAFmRz8oopyK5JGY/edit?usp=sharing
 
-Language Learning Community (LLC) Discord server is here: https://docs.google.com/document/d/1UO2vKFcx9XFlMEN_ec5uRU0OsGKuAFmRz8oopyK5JGY/edit?usp=sharing
+The Language Learning Community [LLC] (where the idea for this started) Discord server is here: https://discord.gg/wgx5n7bVXx
+
 ---
 
 ## 💰 Costs
