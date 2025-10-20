@@ -3,11 +3,12 @@
   transition: background-color 0.2s ease-in-out;
   border-radius: 3px;
   padding: 0 2px;
+  user-select: text !important;
 }
 
-.clickable-subtitle-word:hover {
+/* .clickable-subtitle-word:hover {
   background-color: rgba(90, 150, 255, 0.7);
-}
+} */
 
 .translate-popup {
     position: fixed;

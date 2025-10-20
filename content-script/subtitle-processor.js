@@ -13,7 +13,7 @@ function initializeSubtitleObserver(subtitleContainer) {
 };
 
 function observerCallback(mutationsList) {
-    for(const mutation of mutationsList) {
+    for (const mutation of mutationsList) {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
             const segments = document.querySelectorAll('.ytp-caption-segment');
             segments.forEach(makeWordsClickable);
@@ -46,10 +46,26 @@ function makeWordsClickable(segmentNode) {
         wordSpan.addEventListener('mouseover', () => {
             console.log(`Clicked word: "${word}"`);
             createPopup(wordSpan, word);
+            // selectText(document.querySelector("#title > h1 > yt-formatted-string"));
+            selectText(wordSpan);
+
+            // Fix to trigger Google Translate popup
+            const mouseUpEvent = new MouseEvent('mouseup', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+            });
+            wordSpan.dispatchEvent(mouseUpEvent);
+
+            // Band-aid fix for the delayed appearance of the translate button
+            setTimeout(() =>{
+                document.querySelector("#gtx-trans").click()
+            }, 500);
         });
 
         wordSpan.addEventListener('mouseout', () => {
             removePopup();
+            document.querySelector(".jfk-bubble-closebtn")?.click();
         });
 
         segmentNode.appendChild(wordSpan);
@@ -61,3 +77,20 @@ function makeWordsClickable(segmentNode) {
 
     segmentNode.dataset.processed = 'true';
 };
+
+function selectText(node) {
+
+    if (document.body.createTextRange) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(node);
+        range.select();
+    } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    } else {
+        console.warn("Could not select text in node: Unsupported browser.");
+    }
+}
