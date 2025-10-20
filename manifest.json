@@ -7,7 +7,14 @@
     "128": "lss_logo.png"
   },
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "popup/popup.html",
     "default_icon": "lss_logo.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content-script/cs-setup.js", "content-script/subtitle-processor.js", "content-script/cs-popup.js"],
+      "css": ["content-script/content-script.css"]
+      }
+    ]
 }
